@@ -14,9 +14,9 @@ namespace ConsoleApp7
 
         public bool IsCursed { get; set; }
 
-        public override void Serialize()
+        public override void Serialize(string path)
         {
-            using (StreamWriter fs = new StreamWriter("Text.txt"))
+            using (StreamWriter fs = new StreamWriter(path))
             {
                 fs.Write($"Name: {this.Name},\n" +
                     $"Id: {this.Id},\n" +

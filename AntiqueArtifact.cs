@@ -13,9 +13,9 @@ namespace ConsoleApp7
         public int Age { get; set; }
         public string OriginRealm { get; set; }
 
-        public override void Serialize()
+        public override void Serialize(string path)
         {
-            using (FileStream fs = new FileStream("content.txt", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(AntiqueArtifact));
                 serializer.Serialize(fs, this);

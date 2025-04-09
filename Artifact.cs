@@ -20,7 +20,7 @@ namespace ConsoleApp7
             Legendary
         }
 
-        public abstract void Serialize(); 
+        public abstract void Serialize(string path); 
 
     }
 }

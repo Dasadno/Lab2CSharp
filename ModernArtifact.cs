@@ -14,9 +14,9 @@ namespace ConsoleApp7
         public string ManuFacturer { get; set; }
         
 
-        public override void Serialize()
+        public override void Serialize(string path)
         {
-            JsonSerializer.Serialize(this);
+            
         }
     }
 }

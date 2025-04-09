@@ -34,7 +34,7 @@ namespace ConsoleApp7
             {
                 foreach (AntiqueArtifact artifact in data)
                 {
-                    artifact.Serialize();
+                    artifact.Serialize(filePath);
                 }
             }
         }
