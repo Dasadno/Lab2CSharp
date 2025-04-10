@@ -16,17 +16,14 @@ namespace ConsoleApp7
        
         public List<ModernArtifact> LoadData(string path)
         {
-            List<ModernArtifact> artifacts = JsonConvert.DeserializeObject<List<ModernArtifact>>(path);
-
-            return artifacts;
+            string json = File.ReadAllText(path);
+            return JsonConvert.DeserializeObject<List<ModernArtifact>>(json);
         }
 
         public void SaveData(List<ModernArtifact> data, string filePath)
         {
-                foreach (ModernArtifact artifact in data)
-                {
-                    artifact.Serialize(filePath);
-                }
+            string json = JsonConvert.SerializeObject(data, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(filePath, json);
         }
     }
 }

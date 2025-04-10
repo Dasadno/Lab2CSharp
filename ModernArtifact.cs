@@ -14,14 +14,11 @@ namespace ConsoleApp7
         public string ManuFacturer { get; set; }
         
 
-        public override void Serialize(string path)
+        public override string Serialize()
         {
-            Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
-
-            using(StreamWriter sw = new StreamWriter(path))
-            {
-                serializer.Serialize(sw, this);
-            }
+            return "Id: " + Id + " Name: " + Name + " PowerLevel: "
+                + PowerLevel + " Rarity: " + Rarity + " Tech Level: "
+                + TechLevel + " Manufacturer: " + ManuFacturer;
         }
     }
 }

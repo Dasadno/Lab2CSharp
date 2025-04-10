@@ -14,15 +14,12 @@ namespace ConsoleApp7
 
         public bool IsCursed { get; set; }
 
-        public override void Serialize(string path)
+        public override string Serialize()
         {
-            using (StreamWriter fs = new StreamWriter(path))
-            {
-                fs.Write($"Name: {this.Name},\n" +
+                return($"Name: {this.Name},\n" +
                     $"Id: {this.Id},\n" +
                     $"Curse Description: {this.CurseDescription}," +
                     $"Cursed?: {this.IsCursed}\n");
-            }
         }
     }
 }

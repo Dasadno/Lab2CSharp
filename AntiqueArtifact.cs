@@ -13,14 +13,11 @@ namespace ConsoleApp7
         public int Age { get; set; }
         public string OriginRealm { get; set; }
 
-        public override void Serialize(string path)
+        public override string Serialize()
         {
-            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(AntiqueArtifact));
-                serializer.Serialize(fs, this);
-            }
-
+            return "Id: " + Id + " Name: " + Name + " PowerLevel: "
+                + PowerLevel + " Rarity: " + Rarity + " Age: "
+                + Age + " Origin Realm: " + OriginRealm;
         }
     }
 }

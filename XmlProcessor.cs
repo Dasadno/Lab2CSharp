@@ -11,30 +11,21 @@ namespace ConsoleApp7
     {
         public List<AntiqueArtifact> LoadData(string path)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(AntiqueArtifact));
-
-            List<AntiqueArtifact> arts = new List<AntiqueArtifact>();
-
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<AntiqueArtifact>));
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
-                AntiqueArtifact[]? artifacts = serializer.Deserialize(fs) as AntiqueArtifact[];
-
-                    foreach (AntiqueArtifact artifact in artifacts)
-                    {
-                        arts.Add(artifact);
-                    }
-
-                
+                List<AntiqueArtifact>? data = xmlSerializer.Deserialize(fs) as List<AntiqueArtifact>;
+                return data;
             }
-            return arts;
         }
 
         public void SaveData(List<AntiqueArtifact> data, string filePath)
         {
-                foreach (AntiqueArtifact artifact in data)
-                {
-                    artifact.Serialize(filePath);
-                }
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<AntiqueArtifact>));
+            using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
+            {
+                xmlSerializer.Serialize(fs, data);
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ namespace ConsoleApp7
 
         public _rarity Rarity { get; set; }
 
-        public abstract void Serialize(string path); 
+        public abstract string Serialize(); 
 
     }
 }
