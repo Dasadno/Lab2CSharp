@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7
 {
-    internal interface IExportable
+    public interface IExportable
     {
         public string ExportToJson();
         public string ExportToXml();

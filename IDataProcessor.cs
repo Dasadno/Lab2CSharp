@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7
 {
-    internal interface IDataProcessor<T> where T : Artifact
+    public interface IDataProcessor<T> where T : Artifact
     {
-        List<T> LoadData(string filePath);
-        void SaveData(List<T> data, string filePath);
+       public List<T> LoadData(string filePath);
+       public void SaveData(List<T> data, string filePath);
 
     }
 }

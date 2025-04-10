@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace ConsoleApp7
 {
-    internal class AntiqueArtifact : Artifact
+    public class AntiqueArtifact : Artifact
     {
         public int Age { get; set; }
         public string OriginRealm { get; set; }

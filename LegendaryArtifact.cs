@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7
 {
-    internal class LegendaryArtifact : Artifact
+    public class LegendaryArtifact : Artifact
     {
         public string CurseDescription { get; set; }
 
